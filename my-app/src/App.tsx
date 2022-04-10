@@ -60,7 +60,7 @@ function App() {
       <li>{phonetics.text}</li>
     {def.meanings.map((meanings:any) => (
     <ul className="list-unstyled">
-        <li>{meanings.partOfSpeach}</li>
+        <li>Part of Speech: {meanings.partOfSpeech}</li>
         <li>Synonym(s): {meanings.synonyms.join(', ')}</li>
         <li>Antonym(s): {meanings.antonyms.join(', ')}</li>
             {meanings.definitions.map((definitions: any) => (
