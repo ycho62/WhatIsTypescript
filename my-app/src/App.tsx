@@ -54,10 +54,10 @@ function App() {
   <p className="lead">Definition</p>
   {def.map((def:any) => (
   <ul className="list-unstyled">
-    <li>Word: {def.word}</li>
+    <li><b><u><i><p>{def.word}</p></i></u></b></li>
     {def.phonetics.map((phonetics:any) =>(
     <ul className="list-unstyled">
-      <li>{phonetics.text}</li>
+      <li>{phonetics.text ? phonetics.text + "\n": ""} {phonetics.audio && phonetics.text ? <audio src = {phonetics.audio} controls></audio>:""}</li>
     {def.meanings.map((meanings:any) => (
     <ul className="list-unstyled">
         <li>Part of Speech: {meanings.partOfSpeech}</li>
@@ -65,7 +65,7 @@ function App() {
         <li>Antonym(s): {meanings.antonyms.join(', ')}</li>
             {meanings.definitions.map((definitions: any) => (
               <ul className="list-unstyled">
-                <ol>*{definitions.definition}</ol>
+                <ol>-{definitions.definition}</ol>
               </ul>
             ))}
     </ul>
